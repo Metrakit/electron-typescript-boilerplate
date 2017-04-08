@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 var tsProject = ts.createProject('tsconfig.json');
 
-gulp.task('serve', function () {
+gulp.task('watch', function () {
   electron.start();
   gulp.watch('src/**/*.ts', function () {
     gulp.src(['src/**/*.ts', 'typings/**/*.ts'])

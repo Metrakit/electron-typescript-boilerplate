@@ -5,6 +5,7 @@
   "main": "build/App.js",
   "scripts": {
     "start": "electron .",
+    "watch": "gulp watch",
     "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
     "package": "tsc && electron-packager . --all --prune --overwrite --out=package",
     "package-darwin": "tsc && electron-packager . --platform=darwin --prune --overwrite --out=package",
