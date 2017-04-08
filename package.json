@@ -2,7 +2,7 @@
   "name": "electron-typescript-boilerplate",
   "version": "0.0.1",
   "description": "Electron with typescript boilerplate",
-  "main": "build/app.js",
+  "main": "build/App.js",
   "scripts": {
     "start": "electron .",
     "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
@@ -24,6 +24,10 @@
   "devDependencies": {
     "devtron": "^1.4.0",
     "electron": "^1.4.16",
-    "typings": "^2.1.0"
+    "electron-connect": "^0.6.1",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.6",
+    "typings": "^2.1.0",
+    "electron-debug": "^1.1.0"
   }
 }
