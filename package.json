@@ -4,13 +4,13 @@
   "description": "Electron with typescript boilerplate",
   "main": "build/App.js",
   "scripts": {
-    "start": "electron .",
-    "watch": "gulp watch",
+    "start": "cross-env ELECTRON_ENV=development && electron .",
+    "watch": "cross-env ELECTRON_ENV=development && gulp watch",
     "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
-    "package": "tsc && electron-packager . --all --prune --overwrite --out=package",
-    "package-darwin": "tsc && electron-packager . --platform=darwin --prune --overwrite --out=package",
-    "package-linux": "tsc && electron-packager . --platform=linux --prune --overwrite --out=package",
-    "package-windows": "tsc && electron-packager . --platform=win32 --prune --overwrite --out=package"
+    "package": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --all --prune --overwrite --out=package --icon=resources/icon",
+    "package-darwin": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=darwin --prune --overwrite --out=package --icon=resources/icon.icns",
+    "package-linux": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=linux --prune --overwrite --out=package --icon=resources/icon.ico",
+    "package-windows": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=win32 --prune --overwrite --out=package --icon=resources/icon.ico"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,15 @@
   },
   "homepage": "https://github.com/metrakit/electron-typescript-boilerplate#readme",
   "devDependencies": {
+    "cross-env": "^4.0.0",
     "devtron": "^1.4.0",
     "electron": "^1.4.16",
-    "electron-connect": "^0.6.1",
+    "electron-debug": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.6",
-    "typings": "^2.1.0",
-    "electron-debug": "^1.1.0"
+    "typings": "^2.1.0"
+  },
+  "dependencies": {
+    "electron-connect": "^0.6.1"
   }
 }

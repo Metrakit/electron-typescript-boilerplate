@@ -1,5 +1,5 @@
-import { BrowserWindow } from 'electron';
 import { client } from 'electron-connect';
+import { BrowserWindow } from 'electron';
 
 export default class Main {
 
@@ -22,7 +22,10 @@ export default class Main {
         Main.mainWindow = new Main.BrowserWindow({width: 800, height: 600})
         Main.mainWindow.loadURL(`file://${Main.viewsDirectory}/index.html`);
         Main.mainWindow.on('closed', Main.onClose);
-        client.create(Main.mainWindow);
+
+        if (process.env.ELECTRON_ENV === "development") {
+            client.create(Main.mainWindow);
+        }
     }
 
     static main(app: Electron.App, browserWindow: typeof BrowserWindow) {

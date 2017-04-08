@@ -13,6 +13,7 @@
   },
   "exclude": [
     "node_modules",
-    "electron-typescript-boilerplate-*"
+    "electron-typescript-boilerplate-*",
+    "package"
   ]
 }
