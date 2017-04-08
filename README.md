@@ -44,7 +44,3 @@ Open DevTools and focus the Element Inspector tool.
 - macOS: <kbd>Cmd</kbd> <kbd>Shift</kbd> <kbd>C</kbd>
 - Linux: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>C</kbd>
 - Windows: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>C</kbd>
-
-## Credit
-
-Boilerplate made on the top of : https://github.com/DaveMBush/LinkFilter
