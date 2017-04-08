@@ -1,0 +1,29 @@
+{
+  "name": "electron-typescript-boilerplate",
+  "version": "0.0.1",
+  "description": "Electron with typescript boilerplate",
+  "main": "build/app.js",
+  "scripts": {
+    "start": "electron .",
+    "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
+    "package": "tsc && electron-packager . --all --prune --overwrite --out=package",
+    "package-darwin": "tsc && electron-packager . --platform=darwin --prune --overwrite --out=package",
+    "package-linux": "tsc && electron-packager . --platform=linux --prune --overwrite --out=package",
+    "package-windows": "tsc && electron-packager . --platform=win32 --prune --overwrite --out=package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrakit/electron-typescript-boilerplate.git"
+  },
+  "author": "Metrakit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metrakit/electron-typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/metrakit/electron-typescript-boilerplate#readme",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^1.4.16",
+    "typings": "^2.1.0"
+  }
+}

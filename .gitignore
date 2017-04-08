@@ -1,0 +1,7 @@
+electron-typescript-boilerplate-*
+build
+packages
+npm-debug.log
+node_modules
+typings
+.DS_Store
