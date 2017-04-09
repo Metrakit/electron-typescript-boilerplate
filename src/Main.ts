@@ -6,21 +6,21 @@ export default class Main {
     static mainWindow: Electron.BrowserWindow;
     static application: Electron.App;
     static BrowserWindow;
-    static viewsDirectory: string;
+    static resourcesDir: string;
 
-    private static onWindowAllClosed() {
+    private static onWindowAllClosed(): void {
         if (process.platform !== 'darwin') {
             Main.application.quit();
         }
     }
 
-    private static onClose() {
+    private static onClose(): void {
         Main.mainWindow = null;
     }
 
-    private static onReady() {
+    private static onReady(): void {
         Main.mainWindow = new Main.BrowserWindow({width: 800, height: 600})
-        Main.mainWindow.loadURL(`file://${Main.viewsDirectory}/index.html`);
+        Main.mainWindow.loadURL(`file://${Main.resourcesDir}/app.html`);
         Main.mainWindow.on('closed', Main.onClose);
 
         if (process.env.ELECTRON_ENV === "development") {
@@ -28,8 +28,8 @@ export default class Main {
         }
     }
 
-    static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
-        Main.viewsDirectory = `${__dirname}/../views`;
+    static main(app: Electron.App, browserWindow: typeof BrowserWindow): void {
+        Main.resourcesDir = `${__dirname}/../resources`;
         Main.BrowserWindow = browserWindow;
         Main.application = app;
         Main.application.on('window-all-closed', Main.onWindowAllClosed);
