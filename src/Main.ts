@@ -1,13 +1,13 @@
 import { client } from 'electron-connect';
 import { BrowserWindow } from 'electron';
-import { _ } from 'lodash';
+import * as _ from "lodash";
 
 export default class Main {
 
     static mainWindow: Electron.BrowserWindow;
     static application: Electron.App;
     static BrowserWindow;
-    static viewsDirectory: string;
+    static resourcesDir: string;
 
     private static onWindowAllClosed(): void {
         if (process.platform !== 'darwin') {
@@ -48,7 +48,7 @@ export default class Main {
             minWidth: 200,
             minHeight: 200
         });
-        Main.mainWindow.loadURL(`file://${Main.viewsDirectory}/index.html`);
+        Main.mainWindow.loadURL(`file://${Main.resourcesDir}/app.html`);
         Main.mainWindow.on('closed', Main.onClose);
     }
 
@@ -57,7 +57,7 @@ export default class Main {
     }
 
     static main(app: Electron.App, browserWindow: typeof BrowserWindow): void {
-        Main.viewsDirectory = `${__dirname}/../views`;
+        Main.resourcesDir = `${__dirname}/../resources`;
         Main.BrowserWindow = browserWindow;
         Main.application = app;
         Main.application.on('window-all-closed', Main.onWindowAllClosed);
