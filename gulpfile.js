@@ -7,7 +7,7 @@ var tsProject = ts.createProject('tsconfig.json');
 gulp.task('watch', function () {
   electron.start();
   gulp.watch('src/**/*.ts', function () {
-    gulp.src(['src/**/*.ts', 'typings/**/*.ts'])
+    gulp.src(['src/**/*.ts'])
         .pipe(tsProject())
         .pipe(gulp.dest('build'));
   });
