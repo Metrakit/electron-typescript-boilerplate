@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env ELECTRON_ENV=development && electron .",
     "watch": "cross-env ELECTRON_ENV=development && gulp watch",
-    "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
+    "postInstall": "npm install electron -g && npm install electron-packager -g",
     "package": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --all --prune --overwrite --out=package --icon=resources/icon",
     "package-darwin": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=darwin --prune --overwrite --out=package --icon=resources/icon.icns",
     "package-linux": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=linux --prune --overwrite --out=package --icon=resources/icon.ico",
