@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env ELECTRON_ENV=development && electron .",
     "watch": "cross-env ELECTRON_ENV=development && gulp watch",
-    "postInstall": "npm install electron -g && npm install electron-packager -g",
+    "postInstall": "npm install -g typescript && npm install -g electron && npm install -g electron-packager",
     "package": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --all --prune --overwrite --out=package --icon=resources/icon",
     "package-darwin": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=darwin --prune --overwrite --out=package --icon=resources/icon.icns",
     "package-linux": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=linux --prune --overwrite --out=package --icon=resources/icon.ico",
@@ -29,7 +29,8 @@
     "electron": "^1.4.16",
     "electron-debug": "^1.1.0",
     "gulp": "^3.9.1",
-    "gulp-typescript": "^3.1.6"
+    "gulp-typescript": "^3.1.6",
+    "typescript": "^2.2.2"
   },
   "dependencies": {
     "electron-connect": "^0.6.1"

@@ -2,22 +2,20 @@
 
 ## Setup
 
-`npm install -g typescript`
-
 `npm install`
 
-`npm run-script post-npm-install`
+`npm run postInstall`
 
 ## Build executables
 
 - All executables :
-`npm run-script package`
+`npm run package`
 - OSX :
-`npm run-script package-darwin`
+`npm run package-darwin`
 - Linux :
-`npm run-script package-linux`
+`npm run package-linux`
 - Windows :
-`npm run-script package-windows`
+`npm run package-windows`
 
 ## Shortcuts
 
