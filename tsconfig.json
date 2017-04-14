@@ -9,7 +9,13 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "build/"
+    "outDir": "build/",
+    "lib": [
+        "dom",
+        "es2015",
+        "es5",
+        "es6"
+    ]
   },
   "exclude": [
     "node_modules",
