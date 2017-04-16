@@ -2,15 +2,15 @@
   "name": "electron-typescript-boilerplate",
   "version": "0.0.1",
   "description": "Electron with typescript boilerplate",
-  "main": "build/App.js",
+  "main": "build/Main.js",
   "scripts": {
-    "start": "cross-env ELECTRON_ENV=development && electron .",
+    "start": "cross-env ELECTRON_ENV=development && gulp build && electron .",
     "watch": "cross-env ELECTRON_ENV=development && gulp watch",
     "postinstall": "npm install -g typescript && npm install -g electron && npm install -g electron-packager",
-    "package": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --all --prune --overwrite --out=package --icon=resources/icon",
-    "package-darwin": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=darwin --prune --overwrite --out=package --icon=resources/icon.icns",
-    "package-linux": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=linux --prune --overwrite --out=package --icon=resources/icon.ico",
-    "package-windows": "cross-env ELECTRON_ENV=production && tsc && electron-packager . --platform=win32 --prune --overwrite --out=package --icon=resources/icon.ico"
+    "package": "cross-env ELECTRON_ENV=production && gulp build && electron-packager . --all --prune --overwrite --out=package --icon=resources/icon",
+    "package-darwin": "cross-env ELECTRON_ENV=production && gulp build && electron-packager . --platform=darwin --prune --overwrite --out=package --icon=resources/icon.icns",
+    "package-linux": "cross-env ELECTRON_ENV=production && gulp build && electron-packager . --platform=linux --prune --overwrite --out=package --icon=resources/icon.ico",
+    "package-windows": "cross-env ELECTRON_ENV=production && gulp build && electron-packager . --platform=win32 --prune --overwrite --out=package --icon=resources/icon.ico"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,12 @@
     "electron": "^1.4.16",
     "electron-debug": "^1.1.0",
     "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
     "gulp-typescript": "^3.1.6",
     "typescript": "^2.2.2"
   },
   "dependencies": {
-    "electron-connect": "^0.6.1"
+    "electron-connect": "^0.6.1",
+    "electron-debug": "^1.1.0"
   }
 }
